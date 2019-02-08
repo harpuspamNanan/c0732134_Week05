@@ -27,9 +27,10 @@ namespace c0732134_Week05
         public void run()
         {
             firstFloor = new Node();
+            secondFloor = new Node();
             firstFloor.floorNumber = "First Floor";
             Console.WriteLine("The Floor Number is : " + firstFloor.floorNumber);
-            firstFloor.elevatorUp = secondFloor;
+            firstFloor.elevatorUp = secondFloor;            
             secondFloor.floorNumber = "Second Floor";
             Console.WriteLine("The Floor Number is : " + secondFloor.floorNumber);
             Console.ReadLine();
