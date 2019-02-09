@@ -28,10 +28,20 @@ namespace c0732134_Week05
         {
             firstFloor = new Node();
             secondFloor = new Node();
+            thirdFloor = new Node();
+            fourthFloor = new Node();
+
             firstFloor.floorNumber = "First Floor";
-            Console.WriteLine("The Floor Number is : " + firstFloor.floorNumber);
-            firstFloor.elevatorUp = secondFloor;            
             secondFloor.floorNumber = "Second Floor";
+            thirdFloor.floorNumber = "Third Floor";
+            fourthFloor.floorNumber = "Fourth Floor";
+            
+            firstFloor.elevatorUp = secondFloor;
+            secondFloor.elevatorUp = thirdFloor;
+            thirdFloor.elevatorUp = fourthFloor;
+            fourthFloor.elevatorUp = null;
+
+            Console.WriteLine("The Floor Number is : " + firstFloor.floorNumber);
             Console.WriteLine("The Floor Number is : " + secondFloor.floorNumber);
             Console.ReadLine();
         }
