@@ -6,12 +6,16 @@ namespace c0732134_Week05
     {
         static void Main(string[] args)
         {
-            Elevator e = new Elevator();
-            e.setup();
-            e.makeTreeTraversalList();
+            //Elevator e = new Elevator();
+            //e.setup();
+            //e.makeTreeTraversalList();
+
+            BubbleSort bs = new BubbleSort();
+            bs.run();
             Console.ReadLine();
         }
     }
+
     class Node
     {
         public Node() { }
@@ -38,11 +42,40 @@ namespace c0732134_Week05
             Department Books = new Department("Books");
 
             Kitchenware.nextDepartment = Books;
-           // Kitchenware.previousDepartment 
+            // Kitchenware.previousDepartment 
 
         }
     }
 
+    class BubbleSort
+    {
+        public void run()
+        {
+            int[] ar = new int[5] { 4, 5, 6, 2, 3 };
+            int mid = 0, temp = 0;
+
+            for (int i = 0; i < ar.Length; i++)
+            {
+                
+                for (int j = 0; j < ar.Length - 1; j++)
+                {
+                    temp = 0;
+                    if (ar[j] > ar[j + 1])
+                    {
+                        temp = ar[j + 1];
+                        ar[j + 1] = ar[j];
+                        ar[j] = temp;
+                    }
+                }
+                
+            }
+            for (int i = 0; i < ar.Length; i++)
+            {
+                Console.Write("{0} ", ar[i]);
+            }
+            
+        }
+    }
 
     class Elevator
     {
@@ -60,18 +93,18 @@ namespace c0732134_Week05
             fourthFloor = new Node();
 
             head = firstFloor;
-            
+
             firstFloor.floorNumber = "First Floor";
             secondFloor.floorNumber = "Second Floor";
             thirdFloor.floorNumber = "Third Floor";
             fourthFloor.floorNumber = "Fourth Floor";
-            
+
             firstFloor.elevatorUp = secondFloor;
             secondFloor.elevatorUp = thirdFloor;
             thirdFloor.elevatorUp = fourthFloor;
             fourthFloor.elevatorUp = null;
 
-            
+
             //Console.WriteLine("The Floor Number is : " + firstFloor.floorNumber);
             //Console.WriteLine("The Floor Number is : " + secondFloor.floorNumber);
             //Console.ReadLine();
@@ -83,7 +116,7 @@ namespace c0732134_Week05
             temp = head;
             while (temp != null)
             {
-               
+
                 Console.WriteLine(temp.floorNumber);
                 temp = temp.elevatorUp;
             }
