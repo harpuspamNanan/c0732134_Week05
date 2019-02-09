@@ -14,10 +14,16 @@ namespace c0732134_Week05
     class Node
     {
         public Node() { }
-        public Node floor;
         public Node elevatorUp;
         public string floorNumber;
     }
+
+    class Department
+    {
+
+    }
+
+
     class Elevator
     {
         Node head;
@@ -34,7 +40,7 @@ namespace c0732134_Week05
             fourthFloor = new Node();
 
             head = firstFloor;
-
+            
             firstFloor.floorNumber = "First Floor";
             secondFloor.floorNumber = "Second Floor";
             thirdFloor.floorNumber = "Third Floor";
@@ -57,9 +63,9 @@ namespace c0732134_Week05
             temp = head;
             while (temp != null)
             {
-                temp = temp.elevatorUp;
+               
                 Console.WriteLine(temp.floorNumber);
-                    
+                temp = temp.elevatorUp;
             }
         }
     }
