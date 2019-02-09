@@ -8,6 +8,7 @@ namespace c0732134_Week05
         {
             Elevator e = new Elevator();
             e.setup();
+            Console.ReadLine();
         }
     }
     class Node
@@ -19,7 +20,7 @@ namespace c0732134_Week05
     }
     class Elevator
     {
-        Node Head;
+        Node head;
         Node firstFloor;
         Node secondFloor;
         Node thirdFloor;
@@ -31,6 +32,8 @@ namespace c0732134_Week05
             secondFloor = new Node();
             thirdFloor = new Node();
             fourthFloor = new Node();
+
+            head = firstFloor;
 
             firstFloor.floorNumber = "First Floor";
             secondFloor.floorNumber = "Second Floor";
@@ -50,9 +53,13 @@ namespace c0732134_Week05
 
         public void makeTreeTraversalList()
         {
-            while (true)
+            Node temp;
+            temp = head;
+            while (temp != null)
             {
-
+                temp = temp.elevatorUp;
+                Console.WriteLine(temp.floorNumber);
+                    
             }
         }
     }
