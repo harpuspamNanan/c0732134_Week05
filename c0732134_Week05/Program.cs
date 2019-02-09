@@ -8,6 +8,7 @@ namespace c0732134_Week05
         {
             Elevator e = new Elevator();
             e.setup();
+            e.makeTreeTraversalList();
             Console.ReadLine();
         }
     }
@@ -20,17 +21,36 @@ namespace c0732134_Week05
 
     class Department
     {
+        public Department(string deptName)
+        {
+            departmentDescription = deptName;
+        }
+        public Department nextDepartment;
+        public Department previousDepartment;
+        public string departmentDescription;
+    }
 
+    class DepartmentStore
+    {
+        public void initializeDepartments()
+        {
+            Department Kitchenware = new Department("Kitchenware");
+            Department Books = new Department("Books");
+
+            Kitchenware.nextDepartment = Books;
+           // Kitchenware.previousDepartment 
+
+        }
     }
 
 
     class Elevator
     {
-        Node head;
-        Node firstFloor;
-        Node secondFloor;
-        Node thirdFloor;
-        Node fourthFloor;
+        public static Node head;
+        public static Node firstFloor;
+        public static Node secondFloor;
+        public static Node thirdFloor;
+        public static Node fourthFloor;
 
         public void setup()
         {
